@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import ForOutlet from "./pages/ForOutlet";
 import MainPage from "./pages/MainPage/MainPage";
 import Login from "./pages/SubPage/Login";
+import Logout from "./pages/SubPage/Logout";
 import Signup from "./pages/SubPage/Signup";
 import Ariari_intro from "./pages/SubPage/Ariari_intro";
 import Ariari_howtouse from "./pages/SubPage/Ariari_howtouse";
@@ -22,6 +23,10 @@ export default createBrowserRouter([
             {
                 path: "/login",
                 element: <Login />
+            },
+            {
+                path: "/logout",
+                element: <Logout />
             },
             {
                 path: "/signup",

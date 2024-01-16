@@ -5,13 +5,17 @@ const Container = styled.div`
   display: flex;
   width: 1500px;
   height: 200px;
-  background-color: white;
-  border: 2px solid black;
+  background-color: #EDBAFF;
+  border: 2px solid white;
+  border-radius: 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
 `;
 
 const Section = styled.div`
   flex: 1;
-  border-left: 2px solid black;
+  border-left: 2px solid white;
   display: flex;
   align-items: center;
   justify-content: center;

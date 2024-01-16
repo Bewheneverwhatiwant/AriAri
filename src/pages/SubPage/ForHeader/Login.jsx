@@ -51,7 +51,7 @@ const Box = styled.div`
   background-color: ${props => (props.isSelected ? '#FF9E9E' : 'transparent')};
   border: ${props => (props.isSelected ? '2px solid red' : '1px solid #000')};
   border-bottom: ${props =>
-        !props.isSelected && !props.isLast ? '2px solid red' : 'none'};
+    !props.isSelected && !props.isLast ? '2px solid red' : 'none'};
   &:first-child {
     border-top-left-radius: 20px;
   }
@@ -125,52 +125,53 @@ const LoginButton = styled.button`
 `;
 
 export default function Component() {
-    const [isWho, setIsWho] = useState(0);
-    const navigate = useNavigate();
+  const [isWho, setIsWho] = useState(0);
+  const navigate = useNavigate();
 
-    const handleClick = value => {
-        setIsWho(value);
-    };
+  const handleClick = value => {
+    setIsWho(value);
+  };
 
-    const handleSignup = () => {
-        localStorage.setItem('isLogin', true); // 로그인 상태를 localStorage에 저장
-        console.log('로그인 상태 저장됨:', localStorage.getItem('isLogin')); // 저장된 값을 콘솔에 출력
-        alert('로그인되었습니다.');
-        navigate('/');
-    };
+  const handleSignup = () => {
+    localStorage.setItem('isLogin', true); // 로그인 상태를 localStorage에 저장
+    localStorage.setItem('isWho', isWho); // isWho 값을 로컬 스토리지에 저장
+    console.log('로그인 상태 저장됨:', localStorage.getItem('isLogin')); // 저장된 값을 콘솔에 출력
+    alert('로그인되었습니다.');
+    navigate('/');
+  };
 
-    const [selectedBox, setSelectedBox] = useState(null);
+  const [selectedBox, setSelectedBox] = useState(null);
 
-    return (
-        <MainContainer>
-            <TextHeader>아리아리에 방문해주셔서 감사드립니다.</TextHeader>
-            <LoginContainer isSelected={selectedBox !== null} selected={isWho}>
-                <TopContainer>
-                    <Box isSelected={isWho === 1} onClick={() => handleClick(1)}>
-                        남한 주민
-                    </Box>
-                    <Box isSelected={isWho === 2} onClick={() => handleClick(2)}>
-                        북한 주민
-                    </Box>
-                    <Box isSelected={isWho === 3} onClick={() => handleClick(3)}>
-                        남한 기업
-                    </Box>
-                    {/* 마지막 세로선 제거 */}
-                </TopContainer>
-                <Section>
-                    <Login_row>
-                        <Image src={'icon_id.svg'} />
-                        <Input type="text" placeholder="아이디를 입력하세요." />
-                    </Login_row>
-                </Section>
-                <Section>
-                    <Login_row>
-                        <Image src={'icon_password.svg'} />
-                        <Input type="password" placeholder="비밀번호를 입력하세요." />
-                    </Login_row>
-                </Section>
-            </LoginContainer>
-            <LoginButton onClick={handleSignup}>로그인 완료</LoginButton>
-        </MainContainer>
-    );
+  return (
+    <MainContainer>
+      <TextHeader>아리아리에 방문해주셔서 감사드립니다.</TextHeader>
+      <LoginContainer isSelected={selectedBox !== null} selected={isWho}>
+        <TopContainer>
+          <Box isSelected={isWho === 1} onClick={() => handleClick(1)}>
+            남한 주민
+          </Box>
+          <Box isSelected={isWho === 2} onClick={() => handleClick(2)}>
+            북한 주민
+          </Box>
+          <Box isSelected={isWho === 3} onClick={() => handleClick(3)}>
+            남한 기업
+          </Box>
+          {/* 마지막 세로선 제거 */}
+        </TopContainer>
+        <Section>
+          <Login_row>
+            <Image src={'icon_id.svg'} />
+            <Input type="text" placeholder="아이디를 입력하세요." />
+          </Login_row>
+        </Section>
+        <Section>
+          <Login_row>
+            <Image src={'icon_password.svg'} />
+            <Input type="password" placeholder="비밀번호를 입력하세요." />
+          </Login_row>
+        </Section>
+      </LoginContainer>
+      <LoginButton onClick={handleSignup}>로그인 완료</LoginButton>
+    </MainContainer>
+  );
 }

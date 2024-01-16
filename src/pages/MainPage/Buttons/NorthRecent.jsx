@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import ContainerRow from '../../../Components/Container/ContainerRow';
-import DetailButton from './DetailButton';
+import North_DetailButton from './North_DetailButton';
 import { useNavigate } from 'react-router-dom';
 
 const ButtonContainer = styled.div`
@@ -70,7 +70,7 @@ export default function Component({ $width }) {
             <ContainerRow>
                 <ShortcutContainer>
                     {data.map((item, index) => (
-                        <DetailButton key={index} imgSrc={item.imgSrc} text1={item.text1} text2={item.text2} text3={item.text3} />
+                        <North_DetailButton key={index} imgSrc={item.imgSrc} text1={item.text1} text2={item.text2} text3={item.text3} />
                     ))}
                 </ShortcutContainer>
                 <StyledButton onClick={handleMoreProductsClick}>상품 더보기</StyledButton>

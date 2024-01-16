@@ -8,6 +8,10 @@ import DramaBanner from './Buttons/DramaBanner';
 import ContainerRow from '../../Components/Container/ContainerRow';
 import MarketingBanner from './Buttons/MarketingBanner';
 import CardNews from './Buttons/CardNews';
+import North_navi from './Navi/North_navi';
+import South_navi from './Navi/South_navi';
+import Company_navi from './Navi/Company_navi';
+import useLocalStorage from '../SubPage/Final_useLocalStorage';
 
 const MainContainer = styled.div`
     display: flex;
@@ -28,11 +32,27 @@ const Image = styled.img`
 `;
 
 export default function Component() {
+  const [isWho] = useLocalStorage('isWho', null);
+
+  const renderNavigation = () => {
+    switch (isWho) {
+      case 1:
+        return <South_navi />;
+      case 2:
+        return <North_navi />;
+      case 3:
+        return <Company_navi />;
+      default:
+        return null; // isWho가 0이거나 다른 값일 때는 아무 것도 렌더링하지 않음
+    }
+  };
 
   return (
     <MainBackground>
       <MainContainer>
         <MainBanner />
+        <Sizedbox />
+        {renderNavigation()}
         <Sizedbox />
         <ContainerRow>
           <Image src={'inf_flower.svg'} />

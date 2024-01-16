@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
     border-radius: 10px;
@@ -22,8 +23,14 @@ const Text = styled.p`
 `;
 
 export default function Component({ imgSrc, text1, text2, text3 }) {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/southdetailpage');
+    };
+
     return (
-        <Container>
+        <Container onClick={handleClick}>
             <StyledImage src={imgSrc} alt="Custom Image" />
             <Text>{text1}</Text>
             <Text>{text2}</Text>

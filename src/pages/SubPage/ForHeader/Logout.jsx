@@ -6,7 +6,8 @@ export default function Component() {
 
     const handleLogout = () => {
         localStorage.setItem('isLogin', false);
-        console.log('로그아웃 상태 저장됨:', localStorage.getItem('isLogin')); // 저장된 값을 콘솔에 출력
+        localStorage.setItem('isWho', 0); // isWho를 0으로 설정
+        console.log('로그아웃 상태 저장됨:', localStorage.getItem('isLogin'));
         alert('로그아웃되었습니다.');
         navigate('/');
     };

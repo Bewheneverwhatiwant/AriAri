@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import ContainerRow from '../../../Components/Container/ContainerRow';
-import DetailButton from './DetailButton';
+import South_DetailButton from './South_DetailButton';
 import { useNavigate } from 'react-router-dom';
 
 const ButtonContainer = styled.div`
@@ -59,7 +59,9 @@ export default function Component({ $width }) {
         { imgSrc: "s_img2.svg", text1: "판매자: 이수혁", text2: "상품명: 면도기", text3: "구매 점수: 10점" },
         { imgSrc: "s_img3.svg", text1: "판매자: 임승민", text2: "상품명: 생리대", text3: "구매 점수: 15점" },
         { imgSrc: "s_img4.svg", text1: "판매자: 정재웅", text2: "상품명: 후라이팬", text3: "구매 점수: 5점" },
-        { imgSrc: "s_img5.svg", text1: "판매자: 김재우", text2: "상품명: 롱패딩", text3: "구매 점수: 10점" }
+        { imgSrc: "s_img5.svg", text1: "판매자: 김재우", text2: "상품명: 롱패딩", text3: "구매 점수: 10점" },
+        { imgSrc: "s_img6.svg", text1: "판매자: 홍길동", text2: "상품명: 칫솔", text3: "구매 점수: 5점" },
+        { imgSrc: "s_img7.svg", text1: "판매자: 이영숙", text2: "상품명: 손톱깎이", text3: "구매 점수: 20점" }
     ];
 
     return (
@@ -68,7 +70,7 @@ export default function Component({ $width }) {
             <ContainerRow>
                 <ShortcutContainer>
                     {data.map((item, index) => (
-                        <DetailButton key={index} imgSrc={item.imgSrc} text1={item.text1} text2={item.text2} text3={item.text3} />
+                        <South_DetailButton key={index} imgSrc={item.imgSrc} text1={item.text1} text2={item.text2} text3={item.text3} />
                     ))}
                 </ShortcutContainer>
                 <StyledButton onClick={handleMoreProductsClick}>상품 더보기</StyledButton>

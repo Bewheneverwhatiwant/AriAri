@@ -44,7 +44,7 @@ const Image = styled.img`
 const StyledButton = styled.button`
     width: 150px;
     height: 150px;
-    background: #D9D9D9;
+    background: #F0F0F0;
     color: white;
     border-radius: 10px;
     border: none;
@@ -57,7 +57,7 @@ const StyledButton = styled.button`
 `
 
 const ButtonText = styled.a`
-color: white;
+color: #D9D9D9;
 font-weight: bold;
 font-size: 12px;
 padding-top: 10px;

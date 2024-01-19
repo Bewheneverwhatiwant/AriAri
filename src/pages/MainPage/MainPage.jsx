@@ -55,20 +55,11 @@ export default function Component() {
         {renderNavigation()}
         <Sizedbox />
         <ContainerRow>
-          <Image src={'inf_flower.svg'} />
           <NorthRecent />
         </ContainerRow>
         <Sizedbox />
-        <ContainerRow>
-          <Image src={'animal4.svg'} />
-          <Image src={'animal3.svg'} />
-          <Image src={'icon_DMZ.svg'} />
-          <Image src={'animal1.svg'} />
-          <Image src={'animal2.svg'} />
-        </ContainerRow>
         <Sizedbox />
         <ContainerRow>
-          <Image src={'inf_flower.svg'} />
           <SouthRecent />
         </ContainerRow>
       </MainContainer>

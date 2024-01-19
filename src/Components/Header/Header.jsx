@@ -6,12 +6,13 @@ const HeaderContainer = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: #edbaff;
+  background: white;
+  border-bottom: 2px solid #D9D9D9;
 `;
 
 const Logo = styled.div`
   width: 100px;
-  height: 50px;
+  height: 70px;
   padding-left: 20px;
   img {
     width: 100%;
@@ -68,7 +69,7 @@ export default function Component() {
         <HeaderContainer>
             <Logo>
                 <StyledLink href="/">
-                    <img src="logo_first.svg" alt="로고" />
+                    <img src="logo_final.png" alt="로고" />
                 </StyledLink>
             </Logo>
             <MenuContainer>

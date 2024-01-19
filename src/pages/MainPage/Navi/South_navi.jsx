@@ -1,22 +1,24 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import ContainerRow from '../../../Components/Container/ContainerRow';
+import ContainerCenter from '../../../Components/Container/ContainerCenter';
+import ContainerColumn from '../../../Components/Container/ContainerColumn';
 
 const Container = styled.div`
   display: flex;
   width: 1500px;
   height: 200px;
-  background-color: #EDBAFF;
+  background-color: white;
   border: 2px solid white;
   border-radius: 20px;
   color: white;
-  font-size: 20px;
-  font-weight: bold;
 `;
 
 const Section = styled.div`
   flex: 1;
   border-left: 2px solid white;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -26,14 +28,125 @@ const Section = styled.div`
   }
 `;
 
-export default function Component() {
-    let navigate = useNavigate();
+const Icon = styled.div`
+width: 80px;
+height: 80px;
+border-radius: 20px;
+background-color: #D9D9D9;
+padding: 15px;
+margin-bottom: 10px;
 
-    return (
-        <Container>
-            <Section onClick={() => navigate('/buynorth')}>북한 특산물 구매하기</Section>
-            <Section onClick={() => navigate('/checkmyorder')}>내 주문 확인하기</Section>
-            <Section onClick={() => navigate('/chargepoint')}>점수 충전하러 가기</Section>
-        </Container>
-    );
+justify-content: center;
+align-items: center;
+
+font-size: 15px;
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+`
+
+const StyledText = styled.div`
+text-align: center;
+display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #2F2F2F;
+    font-weight: bold;
+    line-height: 18px;
+`
+
+const Line = styled.div`
+width: 3px;
+height: 100px;
+background-color: #D9D9D9;
+border-radius: 10px;
+`
+
+export default function Component() {
+  let navigate = useNavigate();
+
+  return (
+    <Container>
+      <Section onClick={() => navigate('/allsouth')}>
+        <Icon>
+          <ContainerCenter>
+            <img src="icon_South.svg" alt="상품쇼핑" />
+          </ContainerCenter>
+        </Icon>
+        <StyledText>
+          모든 남한 상품
+        </StyledText>
+      </Section>
+
+      <Section onClick={() => navigate('/allsouth')}>
+        <Icon>
+          <ContainerCenter>
+            <img src="icon_North.svg" alt="상품쇼핑" />
+          </ContainerCenter>
+        </Icon>
+        <StyledText>
+          모든 북한 특산물
+        </StyledText>
+      </Section>
+
+      <Section onClick={() => navigate('/')}>
+        <Icon>
+          <ContainerCenter>
+            <img src="icon_truck.svg" alt="상품쇼핑" />
+          </ContainerCenter>
+        </Icon>
+        <StyledText>
+          배송 조회
+        </StyledText>
+      </Section>
+
+      <Section onClick={() => navigate('/')}>
+        <Icon>
+          <ContainerCenter>
+            <img src="icon_point.svg" alt="상품쇼핑" />
+          </ContainerCenter>
+        </Icon>
+        <StyledText>
+          점수 조회
+        </StyledText>
+      </Section>
+      <ContainerCenter>
+        <Line />
+      </ContainerCenter>
+      <Section onClick={() => navigate('/enrollnorth')}>
+        <Icon>
+          <ContainerCenter>
+            <img src="icon_enroll.svg" alt="등록" />
+          </ContainerCenter>
+        </Icon>
+        <StyledText>
+          북한 특산물 구매
+        </StyledText>
+      </Section>
+      <Section onClick={() => navigate('/myenroll')}>
+        <Icon>
+          <ContainerCenter>
+            <img src="icon_computer.svg" alt="보기" />
+          </ContainerCenter>
+        </Icon>
+        <StyledText>
+          내 주문 확인
+        </StyledText>
+      </Section>
+      <Section onClick={() => navigate('/checkorder')}>
+        <Icon>
+          <ContainerCenter>
+            <img src="icon_cashHand.svg" alt="주문확인" />
+          </ContainerCenter>
+        </Icon>
+        <StyledText>
+          점수 충전하기
+        </StyledText>
+      </Section>
+    </Container>
+  );
 };

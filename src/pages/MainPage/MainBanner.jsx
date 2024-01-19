@@ -61,44 +61,44 @@ const NextButton = styled(CarouselButton)`
 `;
 
 export default function Component() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const apiData_hire = Array.from({ length: 8 });
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const apiData_hire = Array.from({ length: 3 });
 
-    // 슬라이더 자동 이동 타이머 설정
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentIndex(prevIndex =>
-                prevIndex === apiData_hire.length - 1 ? 0 : prevIndex + 1
-            );
-        }, 2000);
-        return () => clearInterval(timer);
-    }, [apiData_hire.length]);
+  // 슬라이더 자동 이동 타이머 설정
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex(prevIndex =>
+        prevIndex === apiData_hire.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [apiData_hire.length]);
 
-    // 다음 슬라이드로 이동
-    const nextHandler = () => {
-        setCurrentIndex(prevIndex =>
-            prevIndex === apiData_hire.length - 1 ? 0 : prevIndex + 1
-        );
-    };
+  // 다음 슬라이드로 이동
+  const nextHandler = () => {
+    setCurrentIndex(prevIndex =>
+      prevIndex === apiData_hire.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
-    // 이전 슬라이드로 이동
-    const prevHandler = () => {
-        setCurrentIndex(prevIndex =>
-            prevIndex === 0 ? apiData_hire.length - 1 : prevIndex - 1
-        );
-    };
+  // 이전 슬라이드로 이동
+  const prevHandler = () => {
+    setCurrentIndex(prevIndex =>
+      prevIndex === 0 ? apiData_hire.length - 1 : prevIndex - 1
+    );
+  };
 
-    return (
-        <CarouselContainer>
-            <CarouselSlider style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-                {Array.from({ length: 8 }, (_, index) => (
-                    <CarouselItem key={index}>
-                        <img src={`/b_img${index + 1}.svg`} alt={`Slide ${index + 1}`} />
-                    </CarouselItem>
-                ))}
-            </CarouselSlider>
-            <PrevButton onClick={prevHandler}><AiOutlineArrowLeft /></PrevButton>
-            <NextButton onClick={nextHandler}><AiOutlineArrowRight /></NextButton>
-        </CarouselContainer>
-    )
+  return (
+    <CarouselContainer>
+      <CarouselSlider style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+        {Array.from({ length: 3 }, (_, index) => (
+          <CarouselItem key={index}>
+            <img src={`/BigBanner${index + 1}.png`} alt={`Slide ${index + 1}`} />
+          </CarouselItem>
+        ))}
+      </CarouselSlider>
+      <PrevButton onClick={prevHandler}><AiOutlineArrowLeft /></PrevButton>
+      <NextButton onClick={nextHandler}><AiOutlineArrowRight /></NextButton>
+    </CarouselContainer>
+  )
 }

@@ -21,7 +21,7 @@ const OneOfThree = styled.div`
 
 const Logo = styled.div`
     width: 200px;
-    height: 100px;
+    height: 170px;
     img {
         width: 100%;
         height: 100%;
@@ -58,7 +58,7 @@ export default function Component() {
         <FooterContainer>
             <OneOfThree>
                 <Logo>
-                    <img src="logo_first.svg" alt="로고" />
+                    <img src="logo_final.png" alt="로고" />
                 </Logo>
             </OneOfThree>
             <OneOfThree>

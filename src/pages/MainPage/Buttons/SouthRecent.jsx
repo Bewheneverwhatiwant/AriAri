@@ -1,16 +1,19 @@
 import styled from 'styled-components';
 import ContainerRow from '../../../Components/Container/ContainerRow';
-import South_DetailButton from './South_DetailButton';
+import South_Detail_Main from './South_Detail_Main';
 import { useNavigate } from 'react-router-dom';
+import ContainerColumn from '../../../Components/Container/ContainerColumn';
+import ContainerCenter from '../../../Components/Container/ContainerCenter';
 
 const ButtonContainer = styled.div`
     position: relative;
     width: 100%;
     height: 370px;
-    background: #DFEEFF;
+    background: white;
+    border-radius: 10px;
     color: white;
     padding-top: 30px;
-    border-radius: 20px 0 0 20px; // 좌측 상단과 하단 모서리에만 적용
+    
 `
 const TextHeader = styled.h1`
     font-family: 'LINE-Bd';
@@ -38,12 +41,24 @@ const Image = styled.img`
 
 const StyledButton = styled.button`
     width: 150px;
-    height: 40px;
-    background: #76B5FF;
+    height: 150px;
+    background: #D9D9D9;
     color: white;
     border-radius: 10px;
     border: none;
+    border-radius: 100px;
     margin-right: 60px;
+    img {
+        width: 50px;
+        height: 50px;
+      }
+`
+
+const ButtonText = styled.a`
+color: white;
+font-weight: bold;
+font-size: 12px;
+padding-top: 10px;
 `
 
 export default function Component({ $width }) {
@@ -55,25 +70,30 @@ export default function Component({ $width }) {
     };
     // 이미지 파일 이름들의 배열
     const data = [
-        { imgSrc: "s_img1.svg", text1: "판매자: 이나영", text2: "상품명: 아기 내복", text3: "구매 점수: 20점" },
-        { imgSrc: "s_img2.svg", text1: "판매자: 이수혁", text2: "상품명: 면도기", text3: "구매 점수: 10점" },
-        { imgSrc: "s_img3.svg", text1: "판매자: 임승민", text2: "상품명: 생리대", text3: "구매 점수: 15점" },
-        { imgSrc: "s_img4.svg", text1: "판매자: 정재웅", text2: "상품명: 후라이팬", text3: "구매 점수: 5점" },
-        { imgSrc: "s_img5.svg", text1: "판매자: 김재우", text2: "상품명: 롱패딩", text3: "구매 점수: 10점" },
-        { imgSrc: "s_img6.svg", text1: "판매자: 홍길동", text2: "상품명: 칫솔", text3: "구매 점수: 5점" },
-        { imgSrc: "s_img7.svg", text1: "판매자: 이영숙", text2: "상품명: 손톱깎이", text3: "구매 점수: 20점" }
+        { imgSrc: "s_img1.svg", text1: "[이나영] 부드럽고 따뜻한", text2: "아기 내복", text3: "20점" },
+        { imgSrc: "s_img2.svg", text1: "[이수혁] 상처나지 않고 오래 쓰는", text2: "면도기", text3: "10점" },
+        { imgSrc: "s_img3.svg", text1: "[임승민] 새지 않고 부드러운", text2: "생리대", text3: "15점" },
+        { imgSrc: "s_img4.svg", text1: "[정재웅] 튼튼하고 설거지가 쉬운", text2: "후라이팬", text3: "5점" },
+        { imgSrc: "s_img5.svg", text1: "[김재우] 한겨울에도 따뜻한", text2: "롱패딩", text3: "10점" },
     ];
 
     return (
         <ButtonContainer $width={$width}>
-            <TextHeader>방금 올라온 남한 기업 상품</TextHeader>
+            <TextHeader>지금 제일 잘 나가는 남한 기업 상품</TextHeader>
             <ContainerRow>
                 <ShortcutContainer>
                     {data.map((item, index) => (
-                        <South_DetailButton key={index} imgSrc={item.imgSrc} text1={item.text1} text2={item.text2} text3={item.text3} />
+                        <South_Detail_Main key={index} imgSrc={item.imgSrc} text1={item.text1} text2={item.text2} text3={item.text3} />
                     ))}
                 </ShortcutContainer>
-                <StyledButton onClick={handleMoreProductsClick}>상품 더보기</StyledButton>
+                <StyledButton onClick={handleMoreProductsClick}>
+                    <ContainerColumn>
+                        <ContainerCenter>
+                            <img src={'icon_BannerArrow.svg'} />
+                        </ContainerCenter>
+                        <ButtonText>상품 더보기</ButtonText>
+                    </ContainerColumn>
+                </StyledButton>
             </ContainerRow>
         </ButtonContainer>
     );

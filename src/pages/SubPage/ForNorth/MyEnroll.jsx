@@ -82,7 +82,7 @@ margin-top: 20px;
 
 const Name = styled.a`
 color: black;
-font-size: 25px;
+font-size: 20px;
 `
 
 const StyledText = styled.div`
@@ -125,7 +125,7 @@ justify-content: center;
 width: 100px;
 height: 30px;
 color: white;
-background-color: #D9D9D9;
+background-color: #4D515A;
 border-radius: 10px;
 margin-top: 10px;
 margin-right: 10px;

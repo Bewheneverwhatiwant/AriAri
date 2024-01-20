@@ -39,7 +39,7 @@ const Icon = styled.div`
 width: 80px;
 height: 80px;
 border-radius: 20px;
-background-color: #D9D9D9;
+background-color: #F2F3F7;
 padding: 15px;
 margin-bottom: 10px;
 
@@ -74,7 +74,7 @@ export default function Component() {
       <Section onClick={() => navigate('/allsouth')}>
         <Icon>
           <ContainerCenter>
-            <img src="icon_South.svg" alt="상품쇼핑" />
+            <img src="icon_foundation.png" alt="상품쇼핑" />
           </ContainerCenter>
         </Icon>
         <StyledText>
@@ -85,7 +85,7 @@ export default function Component() {
       <Section onClick={() => navigate('/allnorth')}>
         <Icon>
           <ContainerCenter>
-            <img src="icon_North.svg" alt="상품쇼핑" />
+            <img src="icon_veg.png" alt="상품쇼핑" />
           </ContainerCenter>
         </Icon>
         <StyledText>
@@ -96,7 +96,7 @@ export default function Component() {
       <Section onClick={() => navigate('/')}>
         <Icon>
           <ContainerCenter>
-            <img src="icon_truck.svg" alt="상품쇼핑" />
+            <img src="icon_deliveryTruck.png" alt="상품쇼핑" />
           </ContainerCenter>
         </Icon>
         <StyledText>
@@ -107,7 +107,7 @@ export default function Component() {
       <Section onClick={() => navigate('/')}>
         <Icon>
           <ContainerCenter>
-            <img src="icon_point.svg" alt="상품쇼핑" />
+            <img src="icon_coin.png" alt="상품쇼핑" />
           </ContainerCenter>
         </Icon>
         <StyledText>
@@ -120,7 +120,7 @@ export default function Component() {
       <Section onClick={() => navigate('/enrollnorth')}>
         <Icon>
           <ContainerCenter>
-            <img src="icon_enroll.svg" alt="등록" />
+            <img src="icon_mouseHand.png" alt="등록" />
           </ContainerCenter>
         </Icon>
         <StyledText>
@@ -130,7 +130,7 @@ export default function Component() {
       <Section onClick={() => navigate('/myenroll')}>
         <Icon>
           <ContainerCenter>
-            <img src="icon_computer.svg" alt="보기" />
+            <img src="icon_myProduct.png" alt="보기" />
           </ContainerCenter>
         </Icon>
         <StyledText>
@@ -140,7 +140,7 @@ export default function Component() {
       <Section onClick={() => navigate('/checkorder')}>
         <Icon>
           <ContainerCenter>
-            <img src="icon_checkOrder.svg" alt="주문확인" />
+            <img src="icon_myOrder.png" alt="주문확인" />
           </ContainerCenter>
         </Icon>
         <StyledText>
@@ -150,7 +150,7 @@ export default function Component() {
       <Section onClick={() => navigate('/buysouth')}>
         <Icon>
           <ContainerCenter>
-            <img src="icon_shoppingSouth.svg" alt="상품쇼핑" />
+            <img src="icon_cart.png" alt="상품쇼핑" />
           </ContainerCenter>
         </Icon>
         <StyledText>

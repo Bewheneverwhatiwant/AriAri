@@ -77,7 +77,7 @@ margin-top: 10px;
 const Address = styled.a`
 color: grey;
 font-size: 15px;
-margin-top: 20px;
+margin-top: 10px;
 `
 
 const Name = styled.a`

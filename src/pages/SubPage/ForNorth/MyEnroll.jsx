@@ -13,6 +13,7 @@ const MainContainer = styled.div`
     gap: 10px;
     padding-top: 30px;
     padding-bottom: 30px;
+    background-color: #F0F0F0;
 `;
 
 const WhyButton = styled.div`
@@ -41,152 +42,230 @@ line-height: 20px;
 `
 
 const OrderContainer = styled.div`
-width: 550px;
-height: 150px;
-background-color: #F0F0F0;
+width: 600px;
+height: 250px;
+background-color: white;
 color: black;
-border-radius: 20px;
+border-radius: 5px;
 
 display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-between;
-padding: 10px;
+padding-left: 20px;
+padding-top: 10px;
 
 img {
     width: 100px;
     height: 100px;
-    border-radius: 10px;
+    border-radius: 5px;
   }
 `
 
 const StyledImage = styled.img`
-    width: 40px;
-    height: 40px;
+    max-width: 40px;
+    max-height: 40px;
 `;
 
 const Title = styled.h1`
 color: black;
 font-size: 20px;
 font-weight: bold;
+margin-top: 10px;
+`
+
+const Address = styled.a`
+color: grey;
+font-size: 15px;
+margin-top: 20px;
+`
+
+const Name = styled.a`
+color: black;
+font-size: 25px;
 `
 
 const StyledText = styled.div`
+display: flex;
+flex-direction: column;
 color: black;
 line-height: 20px;
 font-size: 15px;
 `
 
 const Sizedbox = styled.div`
-width: 30px;
+width: 10px;
 height: 30px;
 `
 
-const DetailButton = styled.button`
-width: 230px;
+const SmallSize = styled.div`
+width: 20px;
+`
+
+const CustomRow = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+`
+
+const BigButtonContainer = styled.div`
+width: 470px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+`
+
+const Delivery = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+width: 100px;
 height: 30px;
-font-size: 15px;
-font-weight: bold;
 color: white;
 background-color: #D9D9D9;
-border-radius: 15px;
+border-radius: 10px;
+margin-top: 10px;
+margin-right: 10px;
+`
+
+const BigButton = styled.button`
+width: 470px;
+height: 60px;
+font-size: 15px;
+font-weight: bold;
+color: black;
+background-color: #F2F3F7;
+border-radius: 5px;
 border: none;
-margin: 15px;
 `
 
 const StyledButton = styled.button`
-width: 230px;
-height: 30px;
+width: 60px;
+height: 60px;
 font-size: 15px;
 font-weight: bold;
-color: white;
-background-color: #D9D9D9;
-border-radius: 15px;
+color: black;
+background-color: #F2F3F7;
+border-radius: 5px;
 border: none;
 margin: 15px;
 `
 
+const Mini = styled.button`
+width: 100px;
+height: 30px;
+font-size: 12px;
+color: white;
+font-weight: bold;
+background-color: #D9D9D9;
+border-radius: 10px;
+border: none;
+`
+
+const CustomInput = styled.input`
+width: 400px;
+margin-bottom: 5px;
+border-radius: 5px;
+border: 2px solid #D9D9D9;
+`
+
 export default function Component() {
+    // 각 주문에 대한 배송 상태 관리
+    const [deliveryStatus, setDeliveryStatus] = useState(['전달 전', '전달 전', '전달 전']);
+    // 추가 버튼 상태 관리
+    const [showButtons, setShowButtons] = useState([false, false, false]);
+    // 편집 모드 상태 관리
+    const [editMode, setEditMode] = useState([false, false, false]);
+    // 주문 정보 상태 관리
+    const [orders, setOrders] = useState([
+        { name: '직접 재배한 단맛 나는 고려 인삼', address: '(내 주소) 함경북도 온성군 00리 빨간지붕 주택', title: '10점' },
+        { name: '벌레 먹은 곳 없는 붉은 사과', address: '(내 주소) 함경북도 온성군 00리 빨간지붕 주택', title: '15점' },
+        { name: '알이 굵고 아삭아삭한 배추', address: '(내 주소) 함경북도 온성군 00리 빨간지붕 주택', title: '8점' }
+    ]);
+
+    // 전달 상태 변경 함수
+    const handleDeliveryClick = index => {
+        const newStatus = [...deliveryStatus];
+        newStatus[index] = '전달 완료';
+        setDeliveryStatus(newStatus);
+    };
+
+    // 추가 버튼 표시 함수
+    const handleShowButtonsClick = index => {
+        const newShowButtons = [...showButtons];
+        newShowButtons[index] = !newShowButtons[index];
+        setShowButtons(newShowButtons);
+    };
+
+    // 편집 모드 변경 함수
+    const handleEditModeClick = index => {
+        const newEditMode = [...editMode];
+        newEditMode[index] = !newEditMode[index];
+        setEditMode(newEditMode);
+    };
+
+    // 주문 정보 변경 함수
+    const handleOrderChange = (index, field, value) => {
+        const newOrders = [...orders];
+        newOrders[index][field] = value;
+        setOrders(newOrders);
+    };
+
     return (
         <MainContainer>
-            <WhyButton>
-                <ContainerRow>
-                    <img src={'icon_why.svg'} />
-                    <Sizedbox />
-                    <WhyText>"판매 중단과 판매 중단 수정, 언제 하는 건가요?"<br />사용 설명 보러가기</WhyText>
-                </ContainerRow>
-            </WhyButton>
-            <Sizedbox />
-            <OrderContainer>
-                <ContainerColumn>
-                    <ContainerRow>
-                        <img src={'picture_insam.png'} />
-                        <Sizedbox />
-                        <StyledText>
-                            상품명: 인삼<br />
-                            판매지 주소(내 주소): 함경북도 온성군 00리 빨간지붕 주택<br />
-                            책정한 점수: 10점
-                        </StyledText>
-                    </ContainerRow>
-                    <ContainerRow>
-                        <StyledButton>
-                            판매중단 (상품 등록 취소)
-                        </StyledButton>
-                        <Sizedbox />
-                        <StyledButton>
-                            판매 정보 수정
-                        </StyledButton>
-                    </ContainerRow>
-                </ContainerColumn>
-            </OrderContainer>
-
-            <Sizedbox />
-            <OrderContainer>
-                <ContainerColumn>
-                    <ContainerRow>
-                        <img src={'picture_apple.png'} />
-                        <Sizedbox />
-                        <StyledText>
-                            상품명: 사과<br />
-                            판매지 주소(내 주소): 함경북도 온성군 00리 빨간지붕 주택<br />
-                            책정한 점수: 15점
-                        </StyledText>
-                    </ContainerRow>
-                    <ContainerRow>
-                        <StyledButton>
-                            판매중단 (상품 등록 취소)
-                        </StyledButton>
-                        <Sizedbox />
-                        <StyledButton>
-                            판매 정보 수정
-                        </StyledButton>
-                    </ContainerRow>
-                </ContainerColumn>
-            </OrderContainer>
-
-            <Sizedbox />
-            <OrderContainer>
-                <ContainerColumn>
-                    <ContainerRow>
-                        <img src={'picture_baechu.png'} />
-                        <Sizedbox />
-                        <StyledText>
-                            상품명: 배추<br />
-                            판매지 주소(내 주소): 함경북도 온성군 00리 빨간지붕 주택<br />
-                            책정한 점수: 8점
-                        </StyledText>
-                    </ContainerRow>
-                    <ContainerRow>
-                        <StyledButton>
-                            판매중단 (상품 등록 취소)
-                        </StyledButton>
-                        <Sizedbox />
-                        <StyledButton>
-                            판매 정보 수정
-                        </StyledButton>
-                    </ContainerRow>
-                </ContainerColumn>
-            </OrderContainer>
+            {orders.map((order, index) => (
+                <OrderContainer key={index}>
+                    <ContainerColumn>
+                        <CustomRow>
+                            <img src={`picture_${index + 1}.png`} />
+                            <SmallSize />
+                            <StyledText>
+                                {editMode[index] ? (
+                                    <>
+                                        <CustomInput type="text" value={order.name} onChange={e => handleOrderChange(index, 'name', e.target.value)} />
+                                        <CustomInput type="text" value={order.address} onChange={e => handleOrderChange(index, 'address', e.target.value)} />
+                                        <CustomInput type="text" value={order.title} onChange={e => handleOrderChange(index, 'title', e.target.value)} />
+                                        <Mini onClick={() => handleEditModeClick(index)}>완료</Mini>
+                                    </>
+                                ) : (
+                                    <>
+                                        <Name>{order.name}</Name>
+                                        <Address>{order.address}</Address>
+                                        <CustomRow>
+                                            <Delivery>{deliveryStatus[index]}</Delivery>
+                                            <Title>{order.title}</Title>
+                                        </CustomRow>
+                                    </>
+                                )}
+                            </StyledText>
+                        </CustomRow>
+                        <ContainerRow>
+                            <BigButton onClick={() => handleDeliveryClick(index)}>
+                                <BigButtonContainer>
+                                    <ContainerRow>
+                                        <StyledImage src={'icon_box.svg'} />
+                                        <Sizedbox />
+                                        배달원에게 전달 완료
+                                    </ContainerRow>
+                                </BigButtonContainer>
+                            </BigButton>
+                            <Sizedbox />
+                            <StyledButton onClick={() => handleShowButtonsClick(index)}>
+                                <StyledImage src={'icon_dots.svg'} />
+                            </StyledButton>
+                        </ContainerRow>
+                        {showButtons[index] && (
+                            <ContainerRow>
+                                <Mini onClick={() => console.log('상품 등록 취소')}>상품 등록 취소</Mini>
+                                <Mini onClick={() => handleEditModeClick(index)}>판매 정보 수정</Mini>
+                            </ContainerRow>
+                        )}
+                    </ContainerColumn>
+                </OrderContainer>
+            ))}
         </MainContainer>
     );
-};
+}

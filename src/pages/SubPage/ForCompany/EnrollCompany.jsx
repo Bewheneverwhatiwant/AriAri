@@ -188,6 +188,14 @@ export default function Component() {
         navigate('/');
     }
 
+    const gocantsell = () => {
+        navigate('/cantsell');
+    }
+
+    const gopointmap = () => {
+        navigate('/pointmap');
+    }
+
 
     return (
         <MainContainer>
@@ -246,7 +254,7 @@ export default function Component() {
                 <Sizedbox />
                 <ContainerRow>
                     <Textarea />
-                    <DetailButton>판매 금지 상품 확인하기</DetailButton>
+                    <DetailButton onClick={gocantsell}>판매 금지 상품 확인하기</DetailButton>
                 </ContainerRow>
             </CustomRow>
 
@@ -258,7 +266,7 @@ export default function Component() {
                 <Sizedbox />
                 <ContainerRow>
                     <Textarea />
-                    <DetailButton>가격 책정 길라잡이 읽어보기</DetailButton>
+                    <DetailButton onClick={gopointmap}>가격 책정 길라잡이 읽어보기</DetailButton>
                 </ContainerRow>
             </CustomRow>
             <Sizedbox />

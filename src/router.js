@@ -21,6 +21,9 @@ import ChargePoint from "./pages/SubPage/ForSouth/ChargePoint";
 import CheckMyOrder from "./pages/SubPage/ForSouth/CheckMyOrder";
 import North_DetailPage from "./pages/SubPage/AllGoods/North_DetailPage";
 import South_DetailPage from "./pages/SubPage/AllGoods/South_DetailPage";
+import CantSell from './pages/SubPage/CantSell';
+import PointMap from './pages/SubPage/PointMap';
+
 
 export default createBrowserRouter([
     {
@@ -110,6 +113,14 @@ export default createBrowserRouter([
             {
                 path: "/Southdetailpage",
                 element: <South_DetailPage />
+            },
+            {
+                path: "/cantsell",
+                element: <CantSell />
+            },
+            {
+                path: "/pointmap",
+                element: <PointMap />
             },
         ]
     }

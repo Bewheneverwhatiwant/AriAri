@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import styled, { css } from 'styled-components';
+import React, { useState } from 'react';
+import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import ContainerColumn from '../../../Components/Container/ContainerColumn';
 import ContainerCenter from '../../../Components/Container/ContainerCenter';
@@ -16,34 +16,9 @@ const MainContainer = styled.div`
     background-color: #F0F0F0;
 `;
 
-const WhyButton = styled.div`
-width: 400px;
-height: 50px;
-background-color: #D9D9D9;
-border-radius: 15px;
-padding: 10px;
-
-display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-
-img {
-    width: 20px;
-    height: 20px;
-  }
-`
-
-const WhyText = styled.a`
-font-size: 15px;
-color: black;
-text-align: center;
-line-height: 20px;
-`
-
 const OrderContainer = styled.div`
-width: 600px;
-height: 250px;
+width: 580px;
+height: 200px;
 background-color: white;
 color: black;
 border-radius: 5px;
@@ -61,11 +36,6 @@ img {
     border-radius: 5px;
   }
 `
-
-const StyledImage = styled.img`
-    max-width: 40px;
-    max-height: 40px;
-`;
 
 const Title = styled.h1`
 color: black;
@@ -109,41 +79,8 @@ align-items: center;
 justify-content: flex-start;
 `
 
-const BigButtonContainer = styled.div`
-width: 470px;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-`
-
-const Delivery = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-width: 100px;
-height: 30px;
-color: white;
-background-color: #4D515A;
-border-radius: 10px;
-margin-top: 10px;
-margin-right: 10px;
-`
-
-const BigButton = styled.button`
-width: 470px;
-height: 60px;
-font-size: 15px;
-font-weight: bold;
-color: black;
-background-color: #F2F3F7;
-border-radius: 5px;
-border: none;
-`
-
 const StyledButton = styled.button`
-width: 60px;
+width: 260px;
 height: 60px;
 font-size: 15px;
 font-weight: bold;
@@ -151,7 +88,7 @@ color: black;
 background-color: #F2F3F7;
 border-radius: 5px;
 border: none;
-margin: 15px;
+margin-top: 15px;
 `
 
 const Mini = styled.button`
@@ -173,10 +110,7 @@ border: 2px solid #D9D9D9;
 `
 
 export default function Component() {
-    // 각 주문에 대한 배송 상태 관리
-    const [deliveryStatus, setDeliveryStatus] = useState(['전달 전', '전달 전', '전달 전']);
-    // 추가 버튼 상태 관리
-    const [showButtons, setShowButtons] = useState([false, false, false]);
+
     // 편집 모드 상태 관리
     const [editMode, setEditMode] = useState([false, false, false]);
     // 주문 정보 상태 관리
@@ -185,20 +119,6 @@ export default function Component() {
         { name: '벌레 먹은 곳 없는 붉은 사과', address: '(내 주소) 함경북도 온성군 00리 빨간지붕 주택', title: '15점' },
         { name: '알이 굵고 아삭아삭한 배추', address: '(내 주소) 함경북도 온성군 00리 빨간지붕 주택', title: '8점' }
     ]);
-
-    // 전달 상태 변경 함수
-    const handleDeliveryClick = index => {
-        const newStatus = [...deliveryStatus];
-        newStatus[index] = '전달 완료';
-        setDeliveryStatus(newStatus);
-    };
-
-    // 추가 버튼 표시 함수
-    const handleShowButtonsClick = index => {
-        const newShowButtons = [...showButtons];
-        newShowButtons[index] = !newShowButtons[index];
-        setShowButtons(newShowButtons);
-    };
 
     // 편집 모드 변경 함수
     const handleEditModeClick = index => {
@@ -235,34 +155,20 @@ export default function Component() {
                                         <Name>{order.name}</Name>
                                         <Address>{order.address}</Address>
                                         <CustomRow>
-                                            <Delivery>{deliveryStatus[index]}</Delivery>
+
                                             <Title>{order.title}</Title>
                                         </CustomRow>
                                     </>
                                 )}
                             </StyledText>
                         </CustomRow>
+
                         <ContainerRow>
-                            <BigButton onClick={() => handleDeliveryClick(index)}>
-                                <BigButtonContainer>
-                                    <ContainerRow>
-                                        <StyledImage src={'icon_box.svg'} />
-                                        <Sizedbox />
-                                        배달원에게 전달 완료
-                                    </ContainerRow>
-                                </BigButtonContainer>
-                            </BigButton>
+                            <StyledButton onClick={() => console.log('상품 등록 취소')}>상품 등록 취소</StyledButton>
                             <Sizedbox />
-                            <StyledButton onClick={() => handleShowButtonsClick(index)}>
-                                <StyledImage src={'icon_dots.svg'} />
-                            </StyledButton>
+                            <StyledButton onClick={() => handleEditModeClick(index)}>판매 정보 수정</StyledButton>
                         </ContainerRow>
-                        {showButtons[index] && (
-                            <ContainerRow>
-                                <Mini onClick={() => console.log('상품 등록 취소')}>상품 등록 취소</Mini>
-                                <Mini onClick={() => handleEditModeClick(index)}>판매 정보 수정</Mini>
-                            </ContainerRow>
-                        )}
+
                     </ContainerColumn>
                 </OrderContainer>
             ))}

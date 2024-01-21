@@ -147,7 +147,7 @@ export default function Component() {
           주문 확인하기
         </StyledText>
       </Section>
-      <Section onClick={() => navigate('/buysouth')}>
+      <Section onClick={() => navigate('/allsouth')}>
         <Icon>
           <ContainerCenter>
             <img src="icon_cart.png" alt="상품쇼핑" />

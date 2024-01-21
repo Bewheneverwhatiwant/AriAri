@@ -97,7 +97,7 @@ export default function Component() {
                 )}
                 <Sizedbox />
                 <ContainerCenter>
-                    <StyledLink_bold href="/">남북 언어사전</StyledLink_bold>
+                    <StyledLink_bold href="/dictionary">남북 언어사전</StyledLink_bold>
                 </ContainerCenter>
                 <Sizedbox />
                 <ContainerCenter>

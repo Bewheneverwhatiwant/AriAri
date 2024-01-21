@@ -86,6 +86,17 @@ export default function Component() {
                 실질적 통일을 이루는 것이 궁극적인 목표입니다.<br />
 
             </Detail>
+            <Sizedbox />
+            <Left_title>
+
+                아리아리 로고 설명
+
+            </Left_title>
+            <Sizedbox />
+            <Detail>
+                비무장 지대(DMZ)에 서식하는 멸종 위기 동물 중 하나이자, 우리 민족과 예로부터 친숙했던<br />
+                두루미를 마스코트로 제작된 로고입니다.
+            </Detail>
 
             <StyledButton onClick={back}>상기 내용을 확인하였습니다.</StyledButton>
             <Sizedbox />

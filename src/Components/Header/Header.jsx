@@ -97,6 +97,10 @@ export default function Component() {
                 )}
                 <Sizedbox />
                 <ContainerCenter>
+                    <StyledLink_bold href="/">남북 언어사전</StyledLink_bold>
+                </ContainerCenter>
+                <Sizedbox />
+                <ContainerCenter>
                     <StyledLink_bold href="/intro">아리아리 소개</StyledLink_bold>
                 </ContainerCenter>
                 <Sizedbox />

@@ -52,7 +52,7 @@ border-radius: 15px;
 
 const Image = styled.img`
   width: 800px;
-  height: 200px;
+  height: 600px;
 `;
 
 export default function Component() {
@@ -65,7 +65,7 @@ export default function Component() {
     return (
         <MainContainer>
             <Sizedbox />
-            <Image src={'logo_first.svg'} />
+            <Image src={'logo_final.png'} />
             <Sizedbox />
             <Left_title>
 

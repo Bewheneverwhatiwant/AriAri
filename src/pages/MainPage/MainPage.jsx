@@ -27,7 +27,7 @@ const Sizedbox = styled.div`
 `
 
 const Image = styled.img`
-    width: 250px;
+    width: 1000px;
     height: 150px;
 `;
 
@@ -58,6 +58,7 @@ export default function Component() {
           <NorthRecent />
         </ContainerRow>
         <Sizedbox />
+        <Image src={'MiniAd.png'} />
         <Sizedbox />
         <ContainerRow>
           <SouthRecent />

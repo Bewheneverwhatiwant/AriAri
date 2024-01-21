@@ -28,11 +28,18 @@ const Section = styled.div`
   }
 `;
 
+const Line = styled.div`
+width: 3px;
+height: 100px;
+background-color: #D9D9D9;
+border-radius: 10px;
+`
+
 const Icon = styled.div`
 width: 80px;
 height: 80px;
 border-radius: 20px;
-background-color: #D9D9D9;
+background-color: #F2F3F7;
 padding: 15px;
 margin-bottom: 10px;
 
@@ -59,13 +66,6 @@ display: flex;
     line-height: 18px;
 `
 
-const Line = styled.div`
-width: 3px;
-height: 100px;
-background-color: #D9D9D9;
-border-radius: 10px;
-`
-
 export default function Component() {
   let navigate = useNavigate();
 
@@ -74,7 +74,7 @@ export default function Component() {
       <Section onClick={() => navigate('/allsouth')}>
         <Icon>
           <ContainerCenter>
-            <img src="icon_South.svg" alt="상품쇼핑" />
+            <img src="icon_foundation.png" alt="상품쇼핑" />
           </ContainerCenter>
         </Icon>
         <StyledText>
@@ -82,10 +82,10 @@ export default function Component() {
         </StyledText>
       </Section>
 
-      <Section onClick={() => navigate('/allsouth')}>
+      <Section onClick={() => navigate('/allnorth')}>
         <Icon>
           <ContainerCenter>
-            <img src="icon_North.svg" alt="상품쇼핑" />
+            <img src="icon_veg.png" alt="상품쇼핑" />
           </ContainerCenter>
         </Icon>
         <StyledText>
@@ -96,7 +96,7 @@ export default function Component() {
       <Section onClick={() => navigate('/')}>
         <Icon>
           <ContainerCenter>
-            <img src="icon_truck.svg" alt="상품쇼핑" />
+            <img src="icon_deliveryTruck.png" alt="상품쇼핑" />
           </ContainerCenter>
         </Icon>
         <StyledText>
@@ -107,7 +107,7 @@ export default function Component() {
       <Section onClick={() => navigate('/')}>
         <Icon>
           <ContainerCenter>
-            <img src="icon_point.svg" alt="상품쇼핑" />
+            <img src="icon_coin.png" alt="상품쇼핑" />
           </ContainerCenter>
         </Icon>
         <StyledText>
@@ -117,36 +117,38 @@ export default function Component() {
       <ContainerCenter>
         <Line />
       </ContainerCenter>
-      <Section onClick={() => navigate('/enrollnorth')}>
+      <Section onClick={() => navigate('/allnorth')}>
         <Icon>
           <ContainerCenter>
-            <img src="icon_enroll.svg" alt="등록" />
+            <img src="icon_mouseHand.png" alt="등록" />
           </ContainerCenter>
         </Icon>
         <StyledText>
           북한 특산물 구매
         </StyledText>
       </Section>
-      <Section onClick={() => navigate('/myenroll')}>
+
+      <Section onClick={() => navigate('/checkmyorder')}>
         <Icon>
           <ContainerCenter>
-            <img src="icon_computer.svg" alt="보기" />
+            <img src="icon_myOrder.png" alt="주문확인" />
           </ContainerCenter>
         </Icon>
         <StyledText>
           내 주문 확인
         </StyledText>
       </Section>
-      <Section onClick={() => navigate('/checkorder')}>
+      <Section onClick={() => navigate('/chargepoint')}>
         <Icon>
           <ContainerCenter>
-            <img src="icon_cashHand.svg" alt="주문확인" />
+            <img src="icon_cart.png" alt="상품쇼핑" />
           </ContainerCenter>
         </Icon>
         <StyledText>
           점수 충전하기
         </StyledText>
       </Section>
+
     </Container>
   );
 };

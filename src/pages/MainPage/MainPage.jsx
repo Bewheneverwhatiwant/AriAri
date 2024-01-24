@@ -23,7 +23,7 @@ const MainContainer = styled.div`
 
 const Sizedbox = styled.div`
    width: 20px;
-   height: 70px;
+   height: 40px;
 `
 
 const Image = styled.img`

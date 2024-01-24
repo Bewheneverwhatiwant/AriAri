@@ -89,14 +89,13 @@ export default function Component() {
 
     // 이미지 파일 이름들의 배열
     const data = [
-        { imgSrc: "s_img1.svg", text1: "판매자: 이나영", text2: "상품명: 아기 내복", text3: "구매 점수: 20점" },
-        { imgSrc: "s_img2.svg", text1: "판매자: 이수혁", text2: "상품명: 면도기", text3: "구매 점수: 10점" },
-        { imgSrc: "s_img3.svg", text1: "판매자: 임승민", text2: "상품명: 생리대", text3: "구매 점수: 15점" },
-        { imgSrc: "s_img4.svg", text1: "판매자: 정재웅", text2: "상품명: 후라이팬", text3: "구매 점수: 5점" },
-        { imgSrc: "s_img5.svg", text1: "판매자: 김재우", text2: "상품명: 롱패딩", text3: "구매 점수: 10점" },
-        { imgSrc: "s_img6.svg", text1: "판매자: 홍길동", text2: "상품명: 칫솔", text3: "구매 점수: 5점" },
-        { imgSrc: "s_img7.svg", text1: "판매자: 이영숙", text2: "상품명: 손톱깎이", text3: "구매 점수: 20점" },
-        { imgSrc: "s_img8.svg", text1: "판매자: 고은아", text2: "상품명: 머리핀", text3: "구매 점수: 17점" }
+        { imgSrc: "s_img1.svg", text1: "이나영", text2: "부드럽고 튼튼한 아기 내복", text3: "20점" },
+        { imgSrc: "s_img2.svg", text1: "이수혁", text2: "상처나지 않는 면도기", text3: "10점" },
+        { imgSrc: "s_img3.svg", text1: "임승민", text2: "보송하고 부드러운 생리대", text3: "15점" },
+        { imgSrc: "s_img4.svg", text1: "정재웅", text2: "음식이 눌러붙지 않는 후라이팬", text3: "5점" },
+        { imgSrc: "s_img5.svg", text1: "김재우", text2: "따뜻하고 튼튼한 롱패딩", text3: "10점" },
+        { imgSrc: "s_img6.svg", text1: "홍길동", text2: "튼튼해서 오래 쓰는 칫솔", text3: "5점" },
+        { imgSrc: "s_img7.svg", text1: "이영숙", text2: "한번 사면 계속 쓰는 손톱깎이", text3: "20점" },
     ];
 
 

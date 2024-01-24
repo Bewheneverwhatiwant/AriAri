@@ -89,11 +89,11 @@ export default function Component() {
 
     // 이미지 파일 이름들의 배열
     const data = [
-        { imgSrc: "img1.svg", text1: "판매자: 김개똥", text2: "상품명: 밤", text3: "구매 점수: 10점" },
-        { imgSrc: "img2.svg", text1: "판매자: 리수혁", text2: "상품명: 미역", text3: "구매 점수: 15점" },
-        { imgSrc: "img3.svg", text1: "판매자: 로은정", text2: "상품명: 복숭아", text3: "구매 점수: 20점" },
-        { imgSrc: "img4.svg", text1: "판매자: 이철수", text2: "상품명: 꿀", text3: "구매 점수: 15점" },
-        { imgSrc: "img5.svg", text1: "판매자: 신유리", text2: "상품명: 사과", text3: "구매 점수: 10점" }
+        { imgSrc: "img1.svg", text1: "김개똥", text2: "단단하고 윤기나는 덕성 밤", text3: "10점" },
+        { imgSrc: "img2.svg", text1: "리수혁", text2: "고소하고 부드러운 신의주 미역", text3: "15점" },
+        { imgSrc: "img3.svg", text1: "로은정", text2: "촉촉하고 즙 가득한 개성 복숭아", text3: "20점" },
+        { imgSrc: "img4.svg", text1: "이철수", text2: "맑고 담백한 강원도 꿀", text3: "15점" },
+        { imgSrc: "img5.svg", text1: "신유리", text2: "단단하고 붉은 화평 사과", text3: "10점" }
     ];
 
     return (

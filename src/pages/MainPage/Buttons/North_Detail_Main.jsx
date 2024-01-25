@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import ContainerColumn from '../../../Components/Container/ContainerColumn';
+import ContainerRow from '../../../Components/Container/ContainerRow';
 
 const Container = styled.div`
     background-color: white;
@@ -30,11 +32,21 @@ const BoldText = styled(Text)` // Text 컴포넌트를 확장
 const StyledText = styled.div`
 margin: 5px 0; // 상하 여백
 color: black;
-text-align: center;
+text-align: left;
 line-height: 20px;
 `
 
-export default function Component({ imgSrc, text1, text2, text3 }) {
+const Time = styled.p`
+    margin: 5px 0; // 상하 여백
+    color: #D9D9D9;
+`;
+
+const Sizedbox = styled.div`
+width: 110px;
+height: 10px;
+`;
+
+export default function Component({ imgSrc, text1, text2, text3, text4 }) {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -45,8 +57,14 @@ export default function Component({ imgSrc, text1, text2, text3 }) {
         <Container onClick={handleClick}>
             <StyledImage src={imgSrc} alt="Custom Image" />
             <StyledText>{text1}</StyledText>
-            <Text>{text2}</Text>
-            <BoldText>{text3}</BoldText>
+            <ContainerColumn>
+                <Sizedbox />
+                <ContainerRow>
+                    <BoldText>{text3}</BoldText>
+                    <Sizedbox />
+                    <Time>{text4}</Time>
+                </ContainerRow>
+            </ContainerColumn>
         </Container>
     );
 }

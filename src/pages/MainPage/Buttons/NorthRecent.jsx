@@ -72,11 +72,11 @@ export default function Component({ $width }) {
 
     // 이미지 파일 이름들의 배열
     const data = [
-        { imgSrc: "img1.svg", text1: "[리수혁] 하나하나 확인했읍니다 달달하게 잘익은", text2: "밤", text3: "10점" },
-        { imgSrc: "img2.svg", text1: "[손은숙] 직접 말리고 썰었읍니다 맛있는", text2: "미역", text3: "15점" },
-        { imgSrc: "img3.svg", text1: "[강현정] 함경북도 온성군에서 재배했읍니다", text2: "복숭아", text3: "20점" },
-        { imgSrc: "img4.svg", text1: "[김진웅] 신선한", text2: "꿀", text3: "15점" },
-        { imgSrc: "img5.svg", text1: "[김아영] 벌레먹은 곳 없이 붉은", text2: "사과", text3: "10점" }
+        { imgSrc: "img1.svg", text1: "[리수혁] 하나하나 확인했읍니다 달달하게 잘익은 밤", text3: "10점", text4: "6분 전" },
+        { imgSrc: "img2.svg", text1: "[손은숙] 직접 말리고 썰었읍니다 맛있는 미역", text3: "15점", text4: "39분 전" },
+        { imgSrc: "img3.svg", text1: "[강현정] 함경북도 온성군에서 재배한 우리집 복숭아", text3: "20점", text4: "8시간 전" },
+        { imgSrc: "img4.svg", text1: "[김진웅] 맑고 담백해요. 신선한 꿀", text3: "15점", text4: "2분 전", text4: "23시간 전" },
+        { imgSrc: "img5.svg", text1: "[김아영] 벌레먹은 곳 없이 붉은 사과", text3: "10점", text4: "어제" }
     ];
 
     return (
@@ -85,7 +85,7 @@ export default function Component({ $width }) {
             <ContainerRow>
                 <ShortcutContainer>
                     {data.map((item, index) => (
-                        <North_Detail_Main key={index} imgSrc={item.imgSrc} text1={item.text1} text2={item.text2} text3={item.text3} />
+                        <North_Detail_Main key={index} imgSrc={item.imgSrc} text1={item.text1} text3={item.text3} text4={item.text4} />
                     ))}
                 </ShortcutContainer>
                 <StyledButton onClick={handleMoreProductsClick}>

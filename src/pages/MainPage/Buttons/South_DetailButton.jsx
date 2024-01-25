@@ -30,11 +30,6 @@ const Text = styled.p`
     color: black;
 `;
 
-const Time = styled.p`
-    margin: 5px 0; // 상하 여백
-    color: #D9D9D9;
-`;
-
 const BoldText = styled(Text)` // Text 컴포넌트를 확장
     font-weight: bold; // 폰트 두께를 bold로 설정
     font-size: 20px;
@@ -47,6 +42,11 @@ margin: 5px 0; // 상하 여백
 color: black;
 text-align: center;
 line-height: 20px;
+`;
+
+const Time = styled.p`
+    margin: 5px 0; // 상하 여백
+    color: #D9D9D9;
 `;
 
 const Sizedbox = styled.div`

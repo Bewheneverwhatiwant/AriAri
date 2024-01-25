@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import ContainerColumn from '../../../Components/Container/ContainerColumn';
 import ContainerRow from '../../../Components/Container/ContainerRow';
 import ContainerCenter from '../../../Components/Container/ContainerCenter';
+import PaymentMethodComponent from './PaymentMethodComponent';
 
 const MainContainer = styled.div`
     display: flex;
@@ -21,30 +22,20 @@ width: 150px;
   margin: 0;
 `;
 
-const Row = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const StyledButton = styled.button`
-width: 70px;
-height: 30px;
-font-size: 15px;
-font-weight: bold;
-color: white;
-background-color: #D9D9D9;
-border-radius: 15px;
-border: none;
-margin-right: 20px;
-`
-
-const LeftedText = styled.div`
-
+const CustomColumn = styled.div`
+height: 70px;
 display: flex;
 flex-direction: column;
-align-items: flex-start;
-justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+`;
+
+const LogoColumn = styled.div`
+height: 600px;
+display: flex;
+flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 `
 
 const TextHeader = styled.h1`
@@ -65,24 +56,26 @@ color: black;
 
 const Menu = styled.div`
 font-size: 20px;
-color: #D9D9D9;
+color: #8E8E8E;
 font-weight: bold;
 display: flex;
 flex-direction: column;
 align-items: flex-start;
 justify-content: flex-start;
 height: 200px;
+margin-left: 20px;
 `
 
-const Menu_2 = styled.div`
+const Menu_3 = styled.div`
 font-size: 20px;
-color: #D9D9D9;
+color: #F15048;
 font-weight: bold;
 display: flex;
 flex-direction: column;
 align-items: flex-start;
 justify-content: flex-start;
-height: 480px;
+height: 200px;
+margin-left: 20px;
 `
 
 const Sizedbox = styled.div`
@@ -115,9 +108,10 @@ border-radius: 15px;
 margin-top: 50px;
 `
 
-const Image = styled.img`
-  width: 920px;
-  height: 600px;
+const StyledImage = styled.img`
+width: 200px;
+height: 170px;
+margin-left: 20px;
 `;
 
 const PointContainer = styled.div`
@@ -135,6 +129,11 @@ border-radius: 10px;
 background-color: #D9D9D9;
 color: black;
 `
+const VerticalLine = styled.div`
+  height: 600px;
+  width: 2px;
+  background-color: #D9D9D9;
+`;
 
 export default function Component() {
 
@@ -146,52 +145,62 @@ export default function Component() {
     };
 
     const pointOptions = [
-        { points: 10, price: 1000 },
-        { points: 30, price: 3000 },
-        { points: 50, price: 5000 },
-        { points: 100, price: 10000 }
+        { points: 5000, price: 1000 },
+        { points: 15000, price: 3000 },
+        { points: 25000, price: 5000 },
+        { points: 50000, price: 10000 }
     ];
 
     return (
         <MainContainer>
             <Sizedbox />
-            <LeftedText>
-                <TextHeader>점수(포인트) 충전</TextHeader>
-            </LeftedText>
 
             <ContainerRow>
-                <Menu>결제금액</Menu>
-                <Sizedbox />
-                <ContainerRow>
-                    {pointOptions.map((option, index) => (
-                        <React.Fragment key={index}>
-                            <PointContainer>
-                                <ContainerColumn>
-                                    <ContainerCenter>
-                                        <Sizedbox />
-                                        <PointHeader>{option.points}점 충전</PointHeader>
-                                        <Sizedbox />
-                                    </ContainerCenter>
-                                    <ContainerCenter>
-                                        <HorizontalLine />
-                                    </ContainerCenter>
-                                    <ContainerCenter>
-                                        <Sizedbox />
-                                        <Detail>{option.price}원 결제</Detail>
-                                    </ContainerCenter>
-                                </ContainerColumn>
-                            </PointContainer>
-                            {index < pointOptions.length - 1 && <Sizedbox />}
-                        </React.Fragment>
-                    ))}
-                </ContainerRow>
+
+                <LogoColumn>
+                    <StyledImage src={'logo_final.png'} />
+                    <Sizedbox />
+                    <CustomColumn>
+                        <Menu>아리아리 알(AR)</Menu>
+                        <Menu_3>충전하기</Menu_3>
+                    </CustomColumn>
+                </LogoColumn>
+
+                <VerticalLine />
+                <ContainerColumn>
+                    <ContainerRow>
+                        <Sizedbox />
+                        {pointOptions.map((option, index) => (
+                            <React.Fragment key={index}>
+                                <PointContainer>
+                                    <ContainerColumn>
+                                        <ContainerCenter>
+                                            <Sizedbox />
+                                            <PointHeader>{option.points}알(AL) 충전</PointHeader>
+                                            <Sizedbox />
+                                        </ContainerCenter>
+                                        <ContainerCenter>
+                                            <HorizontalLine />
+                                        </ContainerCenter>
+                                        <ContainerCenter>
+                                            <Sizedbox />
+                                            <Detail>{option.price}원 결제</Detail>
+                                        </ContainerCenter>
+                                    </ContainerColumn>
+                                </PointContainer>
+                                {index < pointOptions.length - 1 && <Sizedbox />}
+                            </React.Fragment>
+                        ))}
+                        <Sizedbox />
+                    </ContainerRow>
+                    <Sizedbox />
+
+                    <PaymentMethodComponent />
+
+                </ContainerColumn>
             </ContainerRow>
 
-            <ContainerRow>
-                <Menu_2>결제수단</Menu_2>
-                <Sizedbox />
-                <Image src={'cards.svg'} />
-            </ContainerRow>
+
             <ContainerColumn>
                 <TextHeader>
                     아리아리 정책 동의 및 결제 전 주의사항

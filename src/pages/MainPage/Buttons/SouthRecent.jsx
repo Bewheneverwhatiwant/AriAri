@@ -70,11 +70,11 @@ export default function Component({ $width }) {
     };
     // 이미지 파일 이름들의 배열
     const data = [
-        { imgSrc: "s_img1.svg", text1: "[이나영] 부드럽고 따뜻한", text2: "아기 내복", text3: "20점" },
-        { imgSrc: "s_img2.svg", text1: "[이수혁] 상처나지 않고 오래 쓰는", text2: "면도기", text3: "10점" },
-        { imgSrc: "s_img3.svg", text1: "[임승민] 새지 않고 부드러운", text2: "생리대", text3: "15점" },
-        { imgSrc: "s_img4.svg", text1: "[정재웅] 튼튼하고 설거지가 쉬운", text2: "후라이팬", text3: "5점" },
-        { imgSrc: "s_img5.svg", text1: "[김재우] 한겨울에도 따뜻한", text2: "롱패딩", text3: "10점" },
+        { imgSrc: "s_img1.svg", text1: "[이나영] 부드럽고 따뜻한 아기 내복", text3: "20점", text4: "2분 전" },
+        { imgSrc: "s_img2.svg", text1: "[이수혁] 상처나지 않고 오래 쓰는 면도기", text3: "10점", text4: "56분 전" },
+        { imgSrc: "s_img3.svg", text1: "[임승민] 새지 않고 부드러운 생리대", text3: "15점", text4: "4시간 전" },
+        { imgSrc: "s_img4.svg", text1: "[정재웅] 튼튼하고 설거지가 쉬운 후라이팬", text3: "5점", text4: "7시간 전" },
+        { imgSrc: "s_img5.svg", text1: "[김재우] 한겨울에도 따뜻한 롱패딩", text3: "10점", text4: "그저께" },
     ];
 
     return (
@@ -83,7 +83,7 @@ export default function Component({ $width }) {
             <ContainerRow>
                 <ShortcutContainer>
                     {data.map((item, index) => (
-                        <South_Detail_Main key={index} imgSrc={item.imgSrc} text1={item.text1} text2={item.text2} text3={item.text3} />
+                        <South_Detail_Main key={index} imgSrc={item.imgSrc} text1={item.text1} text2={item.text2} text3={item.text3} text4={item.text4} />
                     ))}
                 </ShortcutContainer>
                 <StyledButton onClick={handleMoreProductsClick}>

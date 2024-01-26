@@ -192,9 +192,9 @@ export default function Component() {
     const [editMode, setEditMode] = useState([false, false, false]);
     // 주문 정보 상태 관리
     const [orders, setOrders] = useState([
-        { name: '직접 재배한 단맛 나는 고려 인삼', address: '(내 주소) 함경북도 온성군 00리 빨간지붕 주택', title: '10점' },
-        { name: '벌레 먹은 곳 없는 붉은 사과', address: '(내 주소) 함경북도 온성군 00리 빨간지붕 주택', title: '15점' },
-        { name: '알이 굵고 아삭아삭한 배추', address: '(내 주소) 함경북도 온성군 00리 빨간지붕 주택', title: '8점' }
+        { name: '직접 재배한 단맛 나는 고려 인삼', address: '(내 주소) 함경북도 온성군 00리 빨간지붕 주택', title: '10알' },
+        { name: '벌레 먹은 곳 없는 붉은 사과', address: '(내 주소) 함경북도 온성군 00리 빨간지붕 주택', title: '15알' },
+        { name: '알이 굵고 아삭아삭한 배추', address: '(내 주소) 함경북도 온성군 00리 빨간지붕 주택', title: '8알' }
     ]);
 
     // 전달 상태 변경 함수

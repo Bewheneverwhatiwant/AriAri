@@ -8,8 +8,8 @@ width: 300px;
   padding: 10px;
   cursor: pointer;
   ${({ isSelected }) =>
-        isSelected &&
-        css`
+    isSelected &&
+    css`
         background-color: #FF7D77;
         color: red;
       border-color: red;
@@ -21,6 +21,7 @@ width: 300px;
 `;
 
 const Big = styled.div`
+width: 1380px;
 border: 2px solid red; // Big의 모든 테두리를 빨간색으로 설정합니다.
 padding: 10px;
 `;
@@ -51,33 +52,33 @@ gap: 10px;
 const RadioButtonLabel = styled.label`
   display: flex;
   align-items: center;
-  margin: 20px;
+  margin: 10px;
 `;
 
 const PaymentMethodComponent = () => {
-    const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(null);
 
-    return (
-        <Container>
-            <SmallContainer>
-                {['신용카드', '휴대폰', '온라인이체', '간편결제'].map((method, index) => (
-                    <Small key={method} isSelected={selected === index} onClick={() => setSelected(index)}>
-                        {method}
-                    </Small>
-                ))}
-            </SmallContainer>
-            <Big>
-                <BigContainer>
-                    {['국민카드', '신한카드', '비씨카드', '삼성카드', '현대카드', '농협카드', '롯데카드', '하나카드', '우리카드', '씨티카드', '광주은행', '수협', '전북은행', '우체국', '제주', 'MG 새마을 금고 카드', '신협', '카카오 뱅크', '케이뱅크', '저축은행', 'KDB 산업 은행'].map((option, index) => (
-                        <RadioButtonLabel key={option}>
-                            <RadioButton name="bigOption" />
-                            {option}
-                        </RadioButtonLabel>
-                    ))}
-                </BigContainer>
-            </Big>
-        </Container>
-    );
+  return (
+    <Container>
+      <SmallContainer>
+        {['신용카드', '휴대폰', '온라인이체', '간편결제'].map((method, index) => (
+          <Small key={method} isSelected={selected === index} onClick={() => setSelected(index)}>
+            {method}
+          </Small>
+        ))}
+      </SmallContainer>
+      <Big>
+        <BigContainer>
+          {['국민카드', '신한카드', '비씨카드', '삼성카드', '현대카드', '농협카드', '롯데카드', '하나카드', '우리카드', '씨티카드', '광주은행', '수협', '전북은행', '우체국', '제주', 'MG 새마을 금고 카드', '신협', '카카오 뱅크', '케이뱅크', '저축은행', 'KDB 산업 은행'].map((option, index) => (
+            <RadioButtonLabel key={option}>
+              <RadioButton name="bigOption" />
+              {option}
+            </RadioButtonLabel>
+          ))}
+        </BigContainer>
+      </Big>
+    </Container>
+  );
 };
 
 export default PaymentMethodComponent;

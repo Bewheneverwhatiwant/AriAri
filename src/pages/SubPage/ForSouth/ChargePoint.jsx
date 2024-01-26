@@ -18,7 +18,7 @@ const HorizontalLine = styled.hr`
 width: 150px;
   border: none;
   height: 1px;
-  background-color: black;
+  background-color: red;
   margin: 0;
 `;
 
@@ -52,6 +52,7 @@ margin-bottom: 20px;
 const Detail = styled.div`
 font-size: 17px;
 color: black;
+margin-left: 20px;
 `
 
 const Menu = styled.div`
@@ -91,8 +92,9 @@ background-color: white;
 color: #D9D9D9;
 font-size: 20px;
 font-weight: bold;
-border: none;
+border: 2px solid #D9D9D9;
 border-radius: 15px;
+margin-left: 20px;
 `
 
 const BuyButton = styled.button`
@@ -118,21 +120,51 @@ const PointContainer = styled.div`
 width: 200px;
 height: 200px;
 border-radius: 10px;
-background-color: #D9D9D9;
+background-color: white;
 color: black;
 `
 
 const CautionContainer = styled.div`
-width: 800px;
+width: 700px;
 height: 150px;
 border-radius: 10px;
-background-color: #D9D9D9;
+background-color: white;
+border: 2px solid red;
 color: black;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
 `
 const VerticalLine = styled.div`
   height: 600px;
   width: 2px;
   background-color: #D9D9D9;
+`;
+
+const FullContainer = styled.div`
+  display: flex;
+  width: 1400px;
+  height: 230px;
+  border: 2px solid red;
+  margin: 30px;
+`;
+
+const SmallContainer = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 2px solid red;
+
+  &:first-child {
+    border-left: none;
+  }
+`;
+
+const LastColumn = styled.div`
+display: flex;
+flex-direction: column;
+margin-left: 80px;
 `;
 
 export default function Component() {
@@ -145,10 +177,11 @@ export default function Component() {
     };
 
     const pointOptions = [
-        { points: 5000, price: 1000 },
-        { points: 15000, price: 3000 },
-        { points: 25000, price: 5000 },
-        { points: 50000, price: 10000 }
+        { points: 50000, price: 10000 },
+        { points: 250000, price: 50000 },
+        { points: 500000, price: 100000 },
+        { points: 750000, price: 150000 },
+        { points: 1000000, price: 200000 },
     ];
 
     return (
@@ -161,7 +194,7 @@ export default function Component() {
                     <StyledImage src={'logo_final.png'} />
                     <Sizedbox />
                     <CustomColumn>
-                        <Menu>아리아리 알(AR)</Menu>
+                        <Menu>아리아리 알(AL)</Menu>
                         <Menu_3>충전하기</Menu_3>
                     </CustomColumn>
                 </LogoColumn>
@@ -169,29 +202,29 @@ export default function Component() {
                 <VerticalLine />
                 <ContainerColumn>
                     <ContainerRow>
-                        <Sizedbox />
-                        {pointOptions.map((option, index) => (
-                            <React.Fragment key={index}>
-                                <PointContainer>
-                                    <ContainerColumn>
-                                        <ContainerCenter>
-                                            <Sizedbox />
-                                            <PointHeader>{option.points}알(AL) 충전</PointHeader>
-                                            <Sizedbox />
-                                        </ContainerCenter>
-                                        <ContainerCenter>
-                                            <HorizontalLine />
-                                        </ContainerCenter>
-                                        <ContainerCenter>
-                                            <Sizedbox />
-                                            <Detail>{option.price}원 결제</Detail>
-                                        </ContainerCenter>
-                                    </ContainerColumn>
-                                </PointContainer>
-                                {index < pointOptions.length - 1 && <Sizedbox />}
-                            </React.Fragment>
-                        ))}
-                        <Sizedbox />
+                        <FullContainer>
+                            {pointOptions.map((option, index) => (
+                                <SmallContainer key={index}>
+                                    <PointContainer>
+                                        {/* PointContainer 내용 */}
+                                        <ContainerColumn>
+                                            <ContainerCenter>
+                                                <Sizedbox />
+                                                <PointHeader>{option.points}알(AL) 충전</PointHeader>
+                                                <Sizedbox />
+                                            </ContainerCenter>
+                                            <ContainerCenter>
+                                                <HorizontalLine />
+                                            </ContainerCenter>
+                                            <ContainerCenter>
+                                                <Sizedbox />
+                                                <Detail>{option.price}원 결제</Detail>
+                                            </ContainerCenter>
+                                        </ContainerColumn>
+                                    </PointContainer>
+                                </SmallContainer>
+                            ))}
+                        </FullContainer>
                     </ContainerRow>
                     <Sizedbox />
 
@@ -201,20 +234,20 @@ export default function Component() {
             </ContainerRow>
 
 
-            <ContainerColumn>
+            <LastColumn>
                 <TextHeader>
                     아리아리 정책 동의 및 결제 전 주의사항
                 </TextHeader>
                 <CautionContainer>
-                    <ContainerCenter>
-                        <Sizedbox />
-                        <Detail>상품 및 가격을 확인하였으며, 계약 고지 사항과 아리아리의 정책 및 결제 진행에 동의합니다.</Detail>
-                        <Sizedbox />
-                        <OutButton>동의합니다.</OutButton>
 
-                    </ContainerCenter>
+                    <Sizedbox />
+                    <Detail>상품 및 가격을 확인하였으며, 계약 고지 사항과 아리아리의 정책 및 결제 진행에 동의합니다.</Detail>
+                    <Sizedbox />
+                    <OutButton>동의합니다.</OutButton>
+
+
                 </CautionContainer>
-            </ContainerColumn>
+            </LastColumn>
             <BuyButton>결제하기</BuyButton>
             <Sizedbox />
         </MainContainer>

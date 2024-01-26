@@ -104,7 +104,7 @@ export default function Component() {
         </StyledText>
       </Section>
 
-      <Section onClick={() => navigate('/')}>
+      <Section onClick={() => navigate('/mypoint')}>
         <Icon>
           <ContainerCenter>
             <img src="icon_coin.png" alt="상품쇼핑" />

@@ -24,6 +24,8 @@ import South_DetailPage from "./pages/SubPage/AllGoods/South_DetailPage";
 import CantSell from './pages/SubPage/CantSell';
 import PointMap from './pages/SubPage/PointMap';
 import Dictionary from './pages/SubPage/Dictionary';
+import MyPoint from "./pages/SubPage/ForNorth/MyPoint";
+import AboutAR from "./pages/SubPage/ForNorth/AboutAr";
 
 
 export default createBrowserRouter([
@@ -127,6 +129,14 @@ export default createBrowserRouter([
                 path: "/dictionary",
                 element: <Dictionary />
             },
+            {
+                path: "/mypoint",
+                element: <MyPoint />
+            },
+            {
+                path: '/aboutar',
+                element: <AboutAR />
+            }
         ]
     }
 ]);
